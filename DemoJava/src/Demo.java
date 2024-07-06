@@ -3,10 +3,13 @@ import java.util.Scanner;
 public class Demo { // Tên class để public thì phải trùng với tên file
     // Phím tắt tạo hàm main: main + tab || psvm + tab
     public static void main(String[] args) {
+        int a = 10;
+        System.out.printf("Giá trị của a là : %d", a);
         // Tát cả các lệnh trong Java bắt buộc kết thúc bằng ;
         /*
         Các kiểu dữ liệu:
         số nguyên(int): 0,1,-1,-20,
+        so nguyen(long): > int > short > byte
         số thực(double): 1.5, 7.5, 11.0,
         số thực(float): 1.5f, 5.3f,
         Kiểu logic(boolean): true/false,
@@ -80,6 +83,7 @@ public class Demo { // Tên class để public thì phải trùng với tên fil
         // System.out.print("Hả");
         // System.out.printf(); // Tìm hiểu thêm
 
+
         --------------------------------
         ** Nhập dữ liệu
         Scanner input = new Scanner(System.in); // Đại diện cho nơi nhập dữ liệu (Sytem.in: lâ dữ liệu từ bàn phím)
@@ -109,7 +113,7 @@ public class Demo { // Tên class để public thì phải trùng với tên fil
         System.out.println("Nhập số: ");
         int number = inputNumber.nextInt();
         System.out.println("Nhập text: ");
-        String text = inputString.nextLine();
+        String text = inputString.nextLine(); // ""
         System.out.println("Text: " + text);
         System.out.println("Number: " + number);
 
