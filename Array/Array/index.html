@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // let a = 1;
+    // let b = a; // Copy giá trị từ b sang cho a
+    // a = 10;
+    // console.log(a); // 10
+    // console.log(b); // 1
+
+    // let a = [1, 5, 7, 53, 3]; // Kiểu tham chiếu
+    // let a = new Person(1, "Linh"); // object
+
+    // let obj = {
+    //     id: 1,
+    //     name: "Linh"
+    // }
+    //
+    // let obj2 = {
+    //     id: 1,
+    //     name: "Linh"
+    // }
+    // console.log(obj2 === obj)
+
+    // let obj2 = obj;
+    //
+    // obj2.name = "Đức";
+    //
+    // console.log(obj);
+    // // {id: ; name: }
+    //
+    // console.log(obj2);
+    // {id: ; name: }
+
+    // obj { id: 1; name: " Linh"}
+    // obj2: {id 1; name: "Đức"}
+
+
+    // function go(a, b) {
+    //     // let a = 11, b = 12;
+    //     // a = 10;
+    //     // b = 20;
+    //     let c = a;
+    //     a = b;
+    //     b = c;
+    // }
+    //
+    // let c = 11, d = 12;
+    // go(c, d); // Truyền tham trị: Là khi truyền các giá trị khác object, array
+    // console.log(c);
+    // console.log(d);
+
+    function go(a) {
+        // let a = obj; // f123
+        a.name = "Vũ Linh";
+    }
+
+    let obj = {
+        name: "C04",
+        id: 1
+    } // #f123
+
+    go(obj); // Truyền tham chiếu
+    console.log(obj);
+
+</script>
+</body>
+</html>
