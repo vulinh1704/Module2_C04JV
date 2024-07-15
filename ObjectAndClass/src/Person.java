@@ -44,4 +44,9 @@ public class Person { // Tên lớp public phải trùng với tên file
    có constructor khác thì constructor mặc định vừa nói sẽ k còn.
 
    + Phương thức (Method, Hàm, Function): đại diện cho hành động của các đôi tượng
+   4 tính chất trong OOP
+   1. Tính đóng gói
+   2. Tính ke thừa
+   3. Tính đa hình
+   4. Tính trừu tượng
  */
