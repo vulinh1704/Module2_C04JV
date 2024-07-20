@@ -1,9 +1,10 @@
-// Java không cho phép đa ke thừa
-public class Bird extends Animal{  // Sử dụng extends để kế thừa
+// Đơn kế thừa, kế thừa đa tầng, kế thừa thứ bậc
+// Java không cho phép đa kế thừa
+public class Bird extends Animal {  // Sử dụng extends để kế thừa
     // Lớp con có thể sử dụng các thành phần trừ private, có thể khai báo thêm thuộc tính và phương thức moi
     private String color;
     public Bird(int id, String name, String color) {
-        super(id, name);
+        super(id, name); // Gọi constructor của lớp cha
         this.color = color;
     }
         /*
@@ -14,7 +15,7 @@ public class Bird extends Animal{  // Sử dụng extends để kế thừa
          */
 
     @Override
-    public String go(String to) {
+    public String go(String to) { // Ghi
         // bcd
         return "Bird is go to " + to;
     }
