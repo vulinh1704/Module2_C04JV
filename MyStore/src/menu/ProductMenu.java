@@ -14,11 +14,12 @@ public class ProductMenu {
     public void showMain() {
         int choice;
         do {
-            System.out.println("========= Menu chính ==========\n" +
+            System.out.println("========= Menu quan ly san pham ==========\n" +
                     "1. Thêm mới\n" +
                     "2. Sửa\n" +
                     "3. Xóa\n" +
                     "4. Hiển thị tất cả\n" +
+                    "5. Tìm tên gần đúng\n" +
                     "0. Thoát");
             System.out.println("Hãy nhập lựa chọn của bạn: ");
             choice = inputNumber.nextInt();
@@ -27,7 +28,7 @@ public class ProductMenu {
                     showMenuAdd();
                     break;
                 case 2:
-                    //...
+                    showMenuEdit();
                     break;
                 case 3:
                     showMenuDelete();
@@ -35,8 +36,45 @@ public class ProductMenu {
                 case 4:
                     showMenuList();
                     break;
+                case 5:
+                    showFormSearchByName();
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.out.println("Không có lua chọn");
             }
         } while (choice != 0);
+    }
+
+    public void showFormSearchByName() {
+        System.out.println("============= Tìm kiếm theo teen ============ ");
+        System.out.println("Nhập tên cần tìm: ");
+        String name = inputString.nextLine();
+        ArrayList<Product> productArrayList = productManager.findByNameContain(name);
+        for (int i = 0; i < productArrayList.size(); i++) {
+            System.out.println(i + 1 + ". " + productArrayList.get(i));
+        }
+    }
+
+    public void showMenuEdit() {
+        System.out.println("============= Menu sửa ============");
+        System.out.println("Nhập Id Sửa: ");
+        int id = inputNumber.nextInt();
+        /*
+        boolean isCheck = findById();
+        if(isCheck == false) {
+            System.out.println("Không có");
+            return;
+        }
+         */
+        System.out.println("Nhập tên Sửa: ");
+        String name = inputString.nextLine();
+        System.out.println("Nhập giá giá: ");
+        double price = inputNumber.nextDouble();
+        Product newProduct = new Product(id, name, price);
+        productManager.edit(id, newProduct);
+        System.out.println("Sửa sản phẩm thành công!");
     }
 
     public void showMenuDelete() {
@@ -54,15 +92,14 @@ public class ProductMenu {
             System.out.println(i + 1 + ". " + listProduct.get(i));
         }
     }
+
     public void showMenuAdd() {
         System.out.println("============= Menu thêm mới ============");
-        System.out.println("Nhập Id: ");
-        int id = inputNumber.nextInt();
         System.out.println("Nhập tên: ");
         String name = inputString.nextLine();
         System.out.println("Nhập giá: ");
         double price = inputNumber.nextDouble();
-        Product newProduct = new Product(id, name, price);
+        Product newProduct = new Product(name, price);
         productManager.add(newProduct);
         System.out.println("Thêm sản phẩm thành công!");
     }

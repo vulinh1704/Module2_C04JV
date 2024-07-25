@@ -7,6 +7,33 @@ import java.util.ArrayList;
 public class ProductManager implements IManager<Product> {
     private ArrayList<Product> list = new ArrayList<>();
 
+    public Product getDetail(int id) {
+        int index = this.findById(id);
+        Product product = this.list.get(index);
+        return product;
+    }
+
+
+    public ArrayList<Product> findByPrice(double from, double to) {
+        ArrayList<Product> listSearch = new ArrayList<>();
+        for (Product item: this.list) {
+            if(item.getPrice() > from && item.getPrice() < to) {
+                listSearch.add(item);
+            }
+        }
+        return listSearch;
+    }
+
+    public ArrayList<Product> findByNameContain(String name) {
+        ArrayList<Product> listSearch = new ArrayList<>();
+        for (Product item: this.list) {
+            if(item.getName().toLowerCase().contains(name.toLowerCase())) {
+                listSearch.add(item);
+            }
+        }
+        return listSearch;
+    }
+
     @Override
     public void add(Product product) {
         this.list.add(product);

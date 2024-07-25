@@ -1,11 +1,12 @@
+import menu.MainMenu;
 import menu.ProductMenu;
 
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        ProductMenu productMenu = new ProductMenu();
-        productMenu.showMain();
+        MainMenu mainMenu = new MainMenu();
+        mainMenu.selectMenu();
     }
 }
 
